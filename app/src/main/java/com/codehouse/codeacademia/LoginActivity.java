@@ -29,27 +29,5 @@ public class LoginActivity extends AppCompatActivity {
         editPassword= findViewById(R.id.edit_password);
         btnIniciarSesion= findViewById(R.id.btn_iniciar_sesion);
 
-        btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String user= editUser.getText().toString();
-                String password= editPassword.getText().toString();
-                if(TextUtils.isEmpty(user)){
-                   Toast.makeText(LoginActivity.this, "Campo usuario no puede estar vacío!", Toast.LENGTH_SHORT).show();
-                }
-                else if(TextUtils.isEmpty(password)){
-                   Toast.makeText(LoginActivity.this, "Campo contraseña no puede estar vacío!", Toast.LENGTH_SHORT).show();
-                }
-                else if(!usuarios.contains(user) || !claves.contains(password)){
-                    Toast.makeText(LoginActivity.this, "Usuario o contraseña inválido", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Intent intent= new Intent(getApplicationContext(),MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
-
-            }
-        });
     }
 }
